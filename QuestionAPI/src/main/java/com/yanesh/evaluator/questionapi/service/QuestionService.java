@@ -1,4 +1,4 @@
-package com.yanesh.evaluation.questionapi.service;
+package com.yanesh.evaluator.questionapi.service;
 
 import com.yanesh.evaluator.commonlibrary.models.Question;
 

@@ -1,4 +1,4 @@
-package com.yanesh.evaluation.questionapi;
+package com.yanesh.evaluator.questionapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

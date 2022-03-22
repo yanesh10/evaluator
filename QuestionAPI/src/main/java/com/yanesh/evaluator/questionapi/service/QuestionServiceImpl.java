@@ -1,4 +1,4 @@
-package com.yanesh.evaluation.questionapi.service;
+package com.yanesh.evaluator.questionapi.service;
 
 import com.yanesh.evaluator.commonlibrary.models.Question;
 import com.yanesh.evaluator.commonlibrary.repository.QuestionRepository;
@@ -26,6 +26,6 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public List<Question> getQuestionList(List<String> tags) {
-        return questionRepository.findAllByTags(tags);
+        return questionRepository.findAllByTags(tags, collectionName);
     }
 }

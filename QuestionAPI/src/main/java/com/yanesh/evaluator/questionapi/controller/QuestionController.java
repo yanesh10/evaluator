@@ -1,6 +1,6 @@
-package com.yanesh.evaluation.questionapi.controller;
+package com.yanesh.evaluator.questionapi.controller;
 
-import com.yanesh.evaluation.questionapi.service.QuestionService;
+import com.yanesh.evaluator.questionapi.service.QuestionService;
 import com.yanesh.evaluator.commonlibrary.models.Question;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
