@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -25,6 +26,11 @@ public class BasicMongoCrudRepository<D> implements MongoCrudRepository<D> {
     @Override
     public Optional<D> findById(Object id, Class<D> entityType) {
         return Optional.ofNullable(mongoTemplate.findById(id, entityType));
+    }
+
+    @Override
+    public List<D> findAll(Class<D> entityType, String collectionName) {
+        return mongoTemplate.findAll(entityType, collectionName);
     }
 
     @Override
