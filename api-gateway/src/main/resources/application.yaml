@@ -1,0 +1,19 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8900/eureka
+    
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: question-api-all-questions
+          uri: lb://question-api
+          predicates:
+            - Path=/api/${api.version.question}/questions
+            - Method=GET
+        - id: question-api-all-questions-by-tags
+          uri: lb://question-api
+            predicates:
+              - Path=/api/${api.version.question}/questions/tags
+              - Method=GET

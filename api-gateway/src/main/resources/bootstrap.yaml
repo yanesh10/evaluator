@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: api-gateway
+    
+api:
+  version:
+    question: 1.0
