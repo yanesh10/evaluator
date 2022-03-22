@@ -14,7 +14,11 @@ import org.springframework.stereotype.Service;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.yanesh.evaluator.questionetl.constants.Constants.COMMA_SEPARATOR;
 
 @Slf4j
 @Service
@@ -29,7 +33,8 @@ public class ExcelReader extends AbstractReader {
             String question = getCellValue(row, 0);
             List<Answer> answers = getAnswers(row);
             Answer validAnswer = new Answer(getCellValue(row, 5));
-            questionsList.add(constructQuestion(question, answers, validAnswer));
+            List<String> tags = getTags(getCellValue(row, 6));
+            questionsList.add(constructQuestion(question, answers, validAnswer, tags));
         }
         return questionsList;
     }
@@ -41,6 +46,10 @@ public class ExcelReader extends AbstractReader {
         answers.add(new Answer(getCellValue(row, 3)));
         answers.add(new Answer(getCellValue(row, 4)));
         return answers;
+    }
+
+    private List<String> getTags(String tags){
+        return Arrays.stream(tags.split(COMMA_SEPARATOR)).collect(Collectors.toList());
     }
 
     private String getCellValue(Row row, int i) {
