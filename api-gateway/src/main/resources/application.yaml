@@ -14,6 +14,6 @@ spring:
             - Method=GET
         - id: question-api-all-questions-by-tags
           uri: lb://question-api
-            predicates:
+          predicates:
               - Path=/api/${api.version.question}/questions/tags
               - Method=GET
