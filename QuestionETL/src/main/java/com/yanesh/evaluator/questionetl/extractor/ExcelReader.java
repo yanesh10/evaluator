@@ -28,6 +28,7 @@ public class ExcelReader extends AbstractReader {
     public List<Question> read(FileInputStream file) throws IOException {
         Workbook workbook = new XSSFWorkbook(file);
         Sheet sheet = workbook.getSheetAt(0);
+        sheet.removeRow(sheet.getRow(0));
         List<Question> questionsList = new ArrayList<>();
         for (Row row : sheet) {
             String question = getCellValue(row, 0);

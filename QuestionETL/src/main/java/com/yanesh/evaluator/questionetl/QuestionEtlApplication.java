@@ -5,11 +5,13 @@ import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import static java.lang.System.exit;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.yanesh.evaluator")
 @AllArgsConstructor
+@EnableMongoRepositories
 public class QuestionEtlApplication implements CommandLineRunner {
 
     private final Importer importer;

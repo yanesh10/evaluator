@@ -5,3 +5,8 @@ spring:
       
 server:
   port: 0
+
+etl:
+  reader:
+    excel:
+      file: /Users/ycaussy/Workspaces/directory/questions.xlsx
