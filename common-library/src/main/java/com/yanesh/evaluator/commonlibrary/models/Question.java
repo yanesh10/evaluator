@@ -16,7 +16,7 @@ public class Question {
 
     @Id
     private int id;
-    private String question;
+    private String label;
     private List<Answer> answers;
     private List<String> tags;
 
