@@ -1,0 +1,22 @@
+version: '3'
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak
+    ports:
+      - 9000:8080
+    profiles:
+      - "keycloak"
+  
+  mongodb:
+    image: mongo:3.6.2
+    ports:
+      - 27017-27019:27017-27019
+    volumes:
+      - ./mongo-data:/data/mongo
+    profiles:
+      - "keycloak"
+      - "mongo"
+
+volumes:
+  mongo-data:
+    
