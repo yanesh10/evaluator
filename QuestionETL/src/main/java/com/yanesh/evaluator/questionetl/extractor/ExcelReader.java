@@ -30,22 +30,22 @@ public class ExcelReader extends AbstractReader {
         Sheet sheet = workbook.getSheetAt(0);
         sheet.removeRow(sheet.getRow(0));
         List<Question> questionsList = new ArrayList<>();
+        int id = 1;
         for (Row row : sheet) {
             String question = getCellValue(row, 0);
             List<Answer> answers = getAnswers(row);
-            Answer validAnswer = new Answer(getCellValue(row, 5));
             List<String> tags = getTags(getCellValue(row, 6));
-            questionsList.add(constructQuestion(question, answers, validAnswer, tags));
+            questionsList.add(constructQuestion(id++, question, answers, tags));
         }
         return questionsList;
     }
 
     private List<Answer> getAnswers(Row row) {
         List<Answer> answers = new ArrayList<>();
-        answers.add(new Answer(getCellValue(row, 1)));
-        answers.add(new Answer(getCellValue(row, 2)));
-        answers.add(new Answer(getCellValue(row, 3)));
-        answers.add(new Answer(getCellValue(row, 4)));
+        answers.add(new Answer(getCellValue(row, 1), false));
+        answers.add(new Answer(getCellValue(row, 2), false));
+        answers.add(new Answer(getCellValue(row, 3), false));
+        answers.add(new Answer(getCellValue(row, 4), true));
         return answers;
     }
 

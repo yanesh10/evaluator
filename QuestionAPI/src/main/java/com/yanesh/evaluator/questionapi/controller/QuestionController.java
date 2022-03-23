@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/{api.version}/questions")
+@RequestMapping("/api/${api.version}/questions")
 @AllArgsConstructor
 public class QuestionController {
 

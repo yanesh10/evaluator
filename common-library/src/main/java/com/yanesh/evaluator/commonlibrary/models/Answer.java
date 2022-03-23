@@ -8,5 +8,6 @@ import lombok.Getter;
 public class Answer {
 
     private String label;
+    private boolean valid;
 
 }

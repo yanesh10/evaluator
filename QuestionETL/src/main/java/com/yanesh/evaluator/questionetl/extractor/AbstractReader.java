@@ -16,7 +16,7 @@ public abstract class AbstractReader implements Reader {
         return new FileInputStream(fileLocation);
     }
 
-    public Question constructQuestion(String question, List<Answer> answers, Answer validAnswer, List<String> tags) {
-        return new Question(question, answers, validAnswer, tags);
+    public Question constructQuestion(int id, String question, List<Answer> answers, List<String> tags) {
+        return new Question(id, question, answers, tags);
     }
 }
