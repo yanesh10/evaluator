@@ -12,6 +12,11 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/evaluator
+  application:
+    name: question-api
     
 server:
   port: 0
+  
+collections:
+  question: questions
