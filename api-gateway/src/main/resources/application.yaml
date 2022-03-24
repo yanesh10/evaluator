@@ -2,6 +2,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8900/eureka
+  
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
     
 spring:
   cloud:
@@ -10,10 +13,12 @@ spring:
         - id: question-api-all-questions
           uri: lb://question-api
           predicates:
-            - Path=/api/${api.version.question}/questions
+            - Path=/api/1.0/questions
             - Method=GET
         - id: question-api-all-questions-by-tags
           uri: lb://question-api
           predicates:
-              - Path=/api/${api.version.question}/questions/tags
+              - Path=/api/1.0/questions/tags
               - Method=GET
+  application:
+    name: api-gateway

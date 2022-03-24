@@ -1,4 +1,4 @@
-package com.example.api.gateway;
+package com.yanesh.evaluator.api.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

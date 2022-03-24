@@ -1,4 +1,4 @@
-package com.example.api.gateway;
+package com.yanesh.evaluator.api.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
