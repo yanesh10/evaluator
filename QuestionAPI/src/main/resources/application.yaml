@@ -19,4 +19,4 @@ server:
   port: 0
   
 collections:
-  question: questions
+  question: question
