@@ -22,3 +22,6 @@ spring:
               - Method=GET
   application:
     name: api-gateway
+    
+server:
+  port: 9000
