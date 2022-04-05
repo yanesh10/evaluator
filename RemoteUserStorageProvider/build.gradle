@@ -16,6 +16,7 @@ dependencies {
     compileOnly 'org.keycloak:keycloak-server-spi:17.0.1'
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.keycloak:keycloak-core:17.0.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
