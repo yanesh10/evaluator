@@ -1,0 +1,4 @@
+authorization:
+  client:
+    id: client1234
+    secret: client-secret1234
